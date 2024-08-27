@@ -45,10 +45,10 @@
                     </button>
                 </div>
                 <div class="relative">
-                    <a href="login.blade.php">
-                     <img src="assets/img/gojo.jpg" class="h-8 w-8 rounded-full border border-gray-300 shadow-md">
+                    <a href="{{ url('/login') }}">
+                        <img src="assets/img/gojo.jpg" class="h-8 w-8 rounded-full border border-gray-300 shadow-md">
                     </a>
-                </div>
+                </div>                
             </div>
         </div>
     </nav>
