@@ -36,12 +36,16 @@
                   <div class="relative">
                     <button class="bg-cyan-500 text-white rounded-md px-2 py-1 w-96">Submit</button>
                   </div>
+                  <div class="relative text-center pt-4">
+                    <span class="text-gray-600">Belum Punya Akun? </span>
+                    <a href="{{ route('register') }}" class="text-cyan-500 font-semibold hover:underline">Register</a>
+                </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
 </body>
 </html>
+

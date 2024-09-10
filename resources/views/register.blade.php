@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
@@ -29,7 +31,7 @@
                     <label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                   </div>
                   <div class="relative">
-                    <button class="bg-cyan-500 text-white rounded-md px-2 py-1">Submit</button>
+                    <button class="bg-cyan-500 text-white rounded-md px-2 py-1 w-96">Submit</button>
                   </div>
                 </div>
               </div>
