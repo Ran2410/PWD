@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .column {
-            max-height: 500px; /* Tinggi maksimal yang diinginkan */
-            overflow-y: auto; /* Aktifkan scroll vertikal */
-            min-height: 200px; /* Tinggi minimum kolom */
-            background-color: #f0f0f0; /* Background default kolom */
+            max-height: 500px;
+            overflow-y: auto;
+            min-height: 200px;
+            background-color: #f0f0f0;
         }
 
         .column {
@@ -36,8 +36,8 @@
 </head>
 
 <body class="h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
-    <!-- Navbar -->
-    <nav class="bg-gray-900 text-white py-3">
+     <!-- Navbar -->
+     <nav class="bg-gray-900 text-white py-3">
         <div class="container mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center">
                 <img src="assets/img/logo.jpg" alt="Jets Logo" class="w-8 h-8 mr-2">
@@ -50,7 +50,7 @@
                 <li><a href="#" class="hover:text-blue-500">Pricing</a></li>
                 <li><a href="#" class="hover:text-blue-500">Resources</a></li>
             </ul>
-            <div class="flex items-center space-x-2 ml-auto">
+            <div class="flex items-center space-x-4 ml-auto">
                 <div class="relative">
                     <button class="bg-blue-500 rounded-full h-8 w-8 font-bold text-white text-sm flex items-center justify-center shadow-md">
                         +
@@ -68,11 +68,25 @@
                         </svg>
                     </button>
                 </div>
-                <div class="relative">
-                    <a href="{{ url('/login') }}">
-                        <img src="assets/img/gojo.jpg" class="h-8 w-8 rounded-full border border-gray-300 shadow-md">
-                    </a>
-                </div>                
+                <!-- Blade condition to show Login/Logout -->
+                @if(Auth::check())
+                    <!-- Logout Button -->
+                    <div class="relative">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;" >
+                            @csrf
+                        </form>
+                        <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700"" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                    </div>
+                @else
+                    <!-- Login Button -->
+                    <div class="relative">
+                        <a href="{{ url('/login') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                            Login
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     </nav>
@@ -98,7 +112,7 @@
                 </div>
                 <button class="text-blue-500 hover:text-blue-700 text-sm mt-4">+ Add another card</button>
             </div>
-        </div>            
+        </div>
         <!-- End Todo Column -->
 
         <!-- Doing Column -->
@@ -120,7 +134,7 @@
             </div>
         </div>
         <!-- End Doing Column -->
-        
+
         <!-- Done Column -->
         <div class="bg-gray-100 rounded-lg shadow-md w-80 p-4 flex-shrink-0 column">
             <div class="flex justify-between items-center mb-4">
